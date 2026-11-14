@@ -1,0 +1,12 @@
+description = "Synthesize Systematic Literature Reviews (PRISMA 2020) using comparative prose and exact (n/N, %) counts."
+prompt = '''
+Read and apply the full instructions in `skills/anti-slop-slr/SKILL.md` (or `~/.gemini/skills/anti-slop-slr/SKILL.md` if installed globally).
+
+Workflow:
+1. Group citations by technical mechanism, dataset constraint, or failure mode—never chronological author-by-author lists or repeated `whereas/while` contrasts.
+2. Compute exact `(n/N, %)` subgroup counts directly from provided extraction CSV/Markdown tables; emit `[MISSING_IN_TABLE: ...]` when an attribute is missing or `NR`.
+3. Never invent BibTeX keys or extrapolate attributes from paper titles.
+4. Run `python skills/anti-slop/scripts/stylometry_audit.py <target>` and `python skills/verify-data/scripts/verify_grounding.py <target> --bib <refs.bib>` after editing.
+
+Apply this to: {{args}}
+'''

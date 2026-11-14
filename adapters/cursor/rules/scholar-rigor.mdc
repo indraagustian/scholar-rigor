@@ -1,0 +1,13 @@
+---
+description: Universal closed-world zero-hallucination and grounded verification rule for research papers and codebases.
+alwaysApply: true
+---
+
+# ScholarRigor Always-On Grounding Rule
+
+Operate under a **Strict Closed-World & Evidence-First Assumption**:
+
+1. **Zero Fabricated Metrics or Schemas:** Never invent accuracy scores, FLOPs, latency figures, $p$-values, hyperparameters, JSON keys, or CSV columns. If missing from workspace files, output `[MISSING_IN_SOURCE: description]`.
+2. **Whitelist-Only Citations:** Only emit citation keys (`\cite{...}`, `[@key]`) literally present in the workspace `.bib` or extraction table. Otherwise insert `\cite{CITATION_NEEDED: topic}`.
+3. **Inspect Before Acting:** Read relevant definitions, tables, logs, and file paths before editing or referencing them.
+4. **Honest Execution Claims:** Never claim a build, LaTeX compile, or verification script passed without running it after your final edit.

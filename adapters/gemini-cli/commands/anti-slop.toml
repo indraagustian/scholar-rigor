@@ -1,0 +1,12 @@
+description = "Rewrite or draft academic LaTeX/Markdown manuscripts to Q1 standards without AI slop or fabricated metrics."
+prompt = '''
+Read and apply the full instructions in `skills/anti-slop/SKILL.md` (or `~/.gemini/skills/anti-slop/SKILL.md` if installed globally).
+
+Workflow:
+1. If a Turnitin AI PDF report is referenced, run `python skills/anti-slop/scripts/extract_turnitin.py <report.pdf> --full` first.
+2. Rewrite only the targeted/flagged passages while preserving all LaTeX commands, equations, `\label{}`, `\ref{}`, `\cite{}`, and original numbers.
+3. Avoid banned vocabulary, `whereas/while` chains across consecutive paragraphs, and repetitive short-aphorism openers; smooth ~250-word rolling windows cleanly.
+4. Run `python skills/anti-slop/scripts/stylometry_audit.py <target> [--baseline <orig>]` and `python skills/verify-data/scripts/verify_grounding.py <target> --bib <refs.bib>` after editing.
+
+Apply this to: {{args}}
+'''

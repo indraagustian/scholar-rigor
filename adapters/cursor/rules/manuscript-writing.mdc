@@ -1,0 +1,14 @@
+---
+description: Q1 IEEE/Elsevier anti-slop stylometry, Turnitin reduction, and SLR synthesis rules when editing manuscripts.
+globs: "**/*.tex, **/*.md"
+alwaysApply: false
+---
+
+# Manuscript Stylometry & Anti-Slop Rule
+
+When drafting or rewriting academic manuscripts (`.tex` or `.md`), follow `skills/anti-slop/SKILL.md` (research papers) or `skills/anti-slop-slr/SKILL.md` (literature reviews):
+
+1. Purge LLM buzzwords (`delve`, `underscore`, `showcase`, `harness`, `leverage`, `pivotal`, `crucial`, `tapestry`, `landscape`, etc.) and cap transition markers (`moreover`, `furthermore`, `additionally`, `consequently`, `notably`, `specifically`) at `<= 1` per 500 words.
+2. Eliminate synthetic templates: trailing participial clauses (`, thereby/thus V-ing`), `Not only... but also`, `Despite [Noun]`, Rule of Three, summarizing paragraph hooks, repeated `, whereas/while` contrast chains across adjacent paragraphs, and consecutive short-aphorism paragraph openers.
+3. Preserve natural cadence diversity across ~250-word windows by blending mid-length (`14–22w`) sentences with short empirical verdicts (`6–12w`) and dense mechanistic explanations (`26–40w`).
+4. Run `python skills/anti-slop/scripts/stylometry_audit.py <file>` and `python skills/verify-data/scripts/verify_grounding.py <file> --bib <refs.bib>` after editing.

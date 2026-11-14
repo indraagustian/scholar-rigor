@@ -1,0 +1,12 @@
+{
+  "name": "scholar-rigor",
+  "displayName": "ScholarRigor",
+  "version": "1.1.0",
+  "repository": "https://github.com/indraagustian/scholar-rigor",
+  "description": "Q1 IEEE/Elsevier scientific writing, SLR synthesis, Turnitin AI PDF highlight extraction, rolling-window stylometry auditing, and zero-hallucination citation/metric verification.",
+  "suggestedPrompts": [
+    "/anti-slop Extract highlights from @ai_report.pdf and rewrite only flagged passages in @main.tex against @references.bib",
+    "/anti-slop-slr Synthesize @slr_extraction_table.csv and @references.bib into comparative prose with exact n/N subgroup ratios",
+    "/verify-data Audit @main.tex against @experiment_logs.csv and @references.bib for ungrounded numbers or ghost citations"
+  ]
+}

@@ -1,0 +1,12 @@
+description = "Audit scientific manuscripts against workspace logs, extraction tables, and .bib files to quarantine hallucinations."
+prompt = '''
+Read and apply the full instructions in `skills/verify-data/SKILL.md` (or `~/.gemini/skills/verify-data/SKILL.md` if installed globally).
+
+Workflow:
+1. Run `python skills/verify-data/scripts/verify_grounding.py <target> [--bib <refs.bib>] [--baseline <orig>]`.
+2. Cross-check every experimental metric, sample size, hyperparameter, and citation key against raw workspace data files.
+3. Replace ungrounded metrics in-place with `[MISSING_IN_SOURCE: ...]` and unverified keys with `\cite{CITATION_NEEDED: ...}` or `[CITATION_NEEDED: ...]`.
+4. Print a structured Provenance & Hallucination Audit Table in the response.
+
+Apply this to: {{args}}
+'''
